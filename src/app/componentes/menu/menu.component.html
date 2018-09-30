@@ -1,0 +1,17 @@
+<p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000">
+  <h1 style="font-weight:normal">Menu</h1>
+  <h4 class="navbar-usuario">TexCad</h4>
+  <li class="navbar-menuitem" (click)="visibleSidebar1 = false" ><a routerLink="/cadastro">Cadastro</a></li>
+  <li class="navbar-menuitem" (click)="visibleSidebar1 = false" ><a routerLink="/listar">Listagem</a></li>
+</p-sidebar>
+
+<nav class="navbar">
+  <div class="container">
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <a href="javascript:;" class="navbar-toggle"><i class="fa fa-bars"></i></a>
+        <button pButton type="button" (click)="visibleSidebar1 = true" icon="pi pi-bars"></button>
+      </div>
+    </div>
+  </div>
+</nav>
