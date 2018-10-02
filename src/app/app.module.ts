@@ -1,3 +1,4 @@
+import { DataService } from './servico/data.service';
 import { ButtonModule } from 'primeng/button';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,7 +25,6 @@ import {FieldsetModule} from 'primeng/fieldset';
 import {PanelModule} from 'primeng/panel';
 import {CardModule} from 'primeng/card';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,9 +50,9 @@ import {CardModule} from 'primeng/card';
     AutoCompleteModule,
     FieldsetModule,
     PanelModule,
-    CardModule
+    CardModule,
   ],
-  providers: [MessageService],
+  providers: [MessageService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,7 @@
+import { Cadastro } from './../../models/cadastro';
+import { DataService } from './../../servico/data.service';
 import { Component, OnInit } from '@angular/core';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -16,16 +19,15 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./listagem.component.css']
 })
 export class ListagemComponent implements OnInit {
+  cadastros: Cadastro[];
 
-  variavel: String = '';
-  itens = [{ titulo: 'primeiro', valor: 'teste' },
-  { titulo: 'primeiro2', valor: 'teste1' },
-  { titulo: 'primeiro3', valor: 'teste2' },
-  { titulo: 'primeiro4', valor: 'teste3' }
-  ];
-  constructor() { }
+  constructor(public dataService: DataService) { }
 
   ngOnInit() {
+    this.cadastros = this.dataService.buscaCadastro();
   }
 
+  adicionaCadastro(cadastro: Cadastro) {
+    this.dataService.adicionar(cadastro);
+  }
 }

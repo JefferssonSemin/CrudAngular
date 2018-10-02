@@ -1,20 +1,8 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Cadastro } from './../../models/cadastro';
+
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MessageService } from 'primeng/api';
-import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms';
-import {FieldsetModule} from 'primeng/fieldset';
-import {PanelModule} from 'primeng/panel';
-import {CardModule} from 'primeng/card';
-
-
-@NgModule({
-  imports: [
-    FieldsetModule,
-    PanelModule,
-    CardModule
-  ],
-  declarations: [
-  ]
-})
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastro',
@@ -22,20 +10,31 @@ import {CardModule} from 'primeng/card';
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent implements OnInit {
-
-  userform: FormGroup;
-  constructor(private fb: FormBuilder, private messageService: MessageService) { }
+  nome: string;
+  preco: string;
+  @Output() adiciona = new EventEmitter<Cadastro>();
 
   ngOnInit() {
-    this.userform = this.fb.group({
-      'nome': new FormControl('', Validators.required)
-    });
-
   }
 
+
+  constructor(private fb: FormBuilder, private messageService: MessageService) { }
+
+  adicionar() {
+    this.adiciona.emit({
+      nome: this.nome,
+      preco: this.preco,
+      esconder: true
+    });
+    this.nome = '';
+    this.preco = '';
+  }
 }
+
+
 export enum UnidadeMedida {
   Litro = 1,
   Quilograma = 2,
   Unidade = 3,
 }
+

@@ -1,34 +1,35 @@
-<form [formGroup]="userform">
+<form (submit)= "adicionar()" class="todo-form">
   <div class="p-grid">
     <div class="p-col-10 p-offset-2">
       <p-fieldset class="ui-fieldset-content ui-g-10" legend="Cadastro">
         <div class="ui-g ui-fluid">
           <div class="ui-g-12 ui-md-5">
             <span class="ui-float-label">
-                <h4 class="first">Nome do item</h4>
-              <input id="text" type="text" size="30" pInputText>
+              <h4 class="first">Nome do item</h4>
+              <input name="Nome" type="text" class="form-control" size="30" [(ngModel)]="nome" pInputText>
             </span>
           </div>
           <div class="ui-g-12 ui-md-3">
             <span class="ui-float-label">
-                <h4 class="first">Preço</h4>
-              <input id="text" type="text" size="30" pInputText>
+              <h4 class="first">Preço</h4>
+              <input name="Preco" type="text" class="form-control" [(ngModel)]="preco" pInputText>
             </span>
           </div>
           <div class="ui-g-12 ui-md-2">
-              <h3>Data de validade</h3>
-              <p-calendar [showIcon]="true"></p-calendar>
+            <h3>Data de validade</h3>
+            <p-calendar [showIcon]="true"></p-calendar>
           </div>
           <div class="ui-g-5 ui-md-2">
-              <h3>Data fabricação</h3>
-              <p-calendar [showIcon]="true"></p-calendar>
+            <h3>Data fabricação</h3>
+            <p-calendar [showIcon]="true"></p-calendar>
           </div>
           <div class="ui-g-12 ui-md-4">
-              <span class="ui-float-label">
-                <h4 class="first">Produto perecível</h4>
-                  <p-checkbox binary="true"></p-checkbox>
-              </span>
-            </div>
+            <span class="ui-float-label">
+              <h4 class="first">Produto perecível</h4>
+              <p-checkbox binary="true"></p-checkbox>
+            </span>
+          </div>
+          <button pButton type="submit" label="Salvar" class="ui-button-raised ui-button-warning"></button>
         </div>
       </p-fieldset>
     </div>

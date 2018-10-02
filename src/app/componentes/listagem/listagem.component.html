@@ -1,17 +1,11 @@
+<app-cadastro (adiciona)="adicionaCadastro($event)"></app-cadastro> 
+
 <form>
   <div class="content-section implementation GridDemo">
     <h3 class="first">Basic</h3>
-    <div class="p-grid">
-      <div class="p-col">
-        <div class="box">Teste</div>
-      </div>
-      <div class="p-col">
-        <div class="box">Ronal</div>
-      </div>
-      <div class="p-col">
-        <div class="box">teste2</div>
-      </div>
-    </div>
+    <div class="ui-g">
+ 
+  </div>
   </div>
 </form>
 
@@ -33,15 +27,3 @@
     4
   </div>
 </div>
-
-<form>
-  <span class="ui-float-label">
-    <input id="float-input" type="text" size="30" pInputText [(ngModel)]="variavel" name=˜gywgwy˜>
-    <label for="float-input">{{variavel}}</label>
-
-  </span>
-</form>
-{{variavel}}
-
-<h1>{{itens.length}}</h1>
-<h1 *ngFor="let item of itens">{{item.titulo}} ESPACO {{item.valor}}</h1>
