@@ -4,7 +4,7 @@ import { stringify } from '@angular/compiler/src/util';
 
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root' 
 })
 export class DataService {
 
